@@ -1,0 +1,35 @@
+master:
+  build: ./master
+  hostname: masterank
+  domainname: masterank123
+  ports:
+    - "5000:5000"
+  volumes:
+  - .:/code
+  - ./common_folder:/var/run/app_folder
+
+minion1:
+  build: ./minion1
+  ports:
+    - "5001:5001"
+  volumes:
+  - .:/code
+  - ./common_folder:/var/run/app_folder
+
+minion3:
+  build: ./minion3
+  ports:
+    - "5003:5003"
+  volumes:
+  - .:/code
+  - ./common_folder:/var/run/app_folder
+  
+minion2:
+  build: ./minion2
+  ports:
+    - "5002:5002"
+  volumes:
+  - .:/code
+  - ./common_folder:/var/run/app_folder
+  
+
